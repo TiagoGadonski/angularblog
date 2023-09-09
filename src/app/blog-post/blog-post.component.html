@@ -1,0 +1,58 @@
+<main *ngIf="blogPost$ | async as blogPost">
+
+  <!-- <pre>
+    {{ blogPost | json }}
+  </pre> -->
+
+  <div class="post-container">
+    <img [src]="blogPost.fields?.featureImage?.fields?.file?.url" alt="">
+  <h2>{{blogPost.fields?.title}}</h2>
+  <p class="author">{{ blogPost.fields?.author }}</p>
+  <p>{{blogPost.fields?.content?.content?.value}}</p>
+  
+  <ng-container *ngFor="let content of blogPost.fields?.content?.content">
+    <ng-container [ngSwitch]="content.nodeType">
+      <!-- Exibindo parágrafos -->
+      <ng-container *ngSwitchCase="'paragraph'">
+        <p>{{ content.content[0].value }}</p>
+      </ng-container>
+      
+      <!-- Exibindo headings -->
+      <ng-container *ngSwitchCase="'heading-4'">
+        <h4>{{ content.content[0].value }}</h4>
+      </ng-container>
+      
+      <!-- Exibindo list items (ordered list) -->
+      <ng-container *ngSwitchCase="'ordered-list'">
+        <ol>
+          <ng-container *ngFor="let listItem of content.content">
+            <li>
+              <ng-container *ngFor="let listItemContent of listItem.content">
+                <ng-container [ngSwitch]="listItemContent.nodeType">
+                  <!-- Exibindo parágrafos dentro do list item -->
+                  <ng-container *ngSwitchCase="'paragraph'">
+                    <p>{{ listItemContent.content[0].value }}</p>
+                  </ng-container>
+                  <!-- Exibindo outros tipos de conteúdo dentro do list item se necessário -->
+                </ng-container>
+              </ng-container>
+            </li>
+          </ng-container>
+        </ol>
+      </ng-container>
+      
+      <!-- Você pode adicionar mais casos aqui para outros tipos de conteúdo -->
+      
+      <!-- Caso padrão -->
+      <ng-container *ngSwitchDefault>
+        <p>{{ content.content[0].value }}</p>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+
+
+
+  
+  </div>
+</main>
+
