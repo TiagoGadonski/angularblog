@@ -1,0 +1,11 @@
+.logo-footer{
+  width: auto;
+  margin-bottom: 0;
+}
+
+
+footer,
+.wrapper-footer {
+  width:100%;
+  justify-content: center;
+}

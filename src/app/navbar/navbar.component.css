@@ -1,0 +1,43 @@
+/* custom-sidebar.css */
+#sidebar {
+  background-color: #343a40;
+  color: #fff;
+  width: auto; /* Largura automática com base no conteúdo */
+  border-radius: 25px;
+  position: fixed;
+  transition: all 0.3s;
+  margin-top:10%;
+  margin-left: 12px;
+}
+
+.is-active{
+  display: inline-block;
+  padding-left: 8px;
+}
+
+.not-active{
+  display: none;
+}
+
+.custom-content {
+  padding: 20px;
+}
+
+.custom-sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-sidebar li {
+  margin-bottom: 10px;
+}
+
+/* Estilize os links de navegação */
+.custom-sidebar .nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.custom-sidebar .nav-link:hover {
+  color: #ccc;
+}
