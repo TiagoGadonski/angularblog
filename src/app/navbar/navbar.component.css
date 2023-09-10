@@ -41,3 +41,18 @@
 .custom-sidebar .nav-link:hover {
   color: #ccc;
 }
+
+@media screen and (max-width: 800px) {
+  .is-active{
+    display: none;
+    padding-left: 0;
+  }
+
+  .custom-content {
+    padding: 0;
+  }
+
+  #sidebar{
+    border-radius: 5px;
+  }
+}

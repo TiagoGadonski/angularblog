@@ -87,3 +87,37 @@ header {
 .author{
   color: #aaa;
 }
+
+@media screen and (max-width: 800px) {
+  #mobile-gap{
+    margin-bottom: 1rem;
+  }
+
+  .blog-posts-container{
+    margin: 0 auto;
+  }
+
+  .blog-posts-container p{
+    font-size: 10px;
+  }
+
+  .blog-posts-container h2{
+    font-size: 20px;
+  }
+
+  .blog-posts-container .author{
+    font-size:8px;
+  }
+
+  .blog-posts-container .sumary,
+  .blog-posts-container h2,
+  .blog-posts-container .author,
+  .blog-posts-container img
+  {
+    margin-bottom: 6px;
+  }
+
+  header {
+    margin-bottom: 0;
+  }
+}
